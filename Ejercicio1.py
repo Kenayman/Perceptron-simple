@@ -23,8 +23,8 @@ entrenamiento = datos_xor[:filas_entrenamiento]
 prueba = datos_xor[filas_entrenamiento:]
 
 # Guardar los conjuntos de entrenamiento y prueba en archivos CSV
-np.savetxt('OR_trn.csv', entrenamiento, delimiter=',', fmt='%1.2f')
-np.savetxt('OR_tst.csv', prueba, delimiter=',', fmt='%1.2f')
+np.savetxt('XOR_trn.csv', entrenamiento, delimiter=',', fmt='%1.2f')
+np.savetxt('XOR_tst.csv', prueba, delimiter=',', fmt='%1.2f')
 
 # Paso 2: Entrenar el perceptrón simple
 
@@ -59,13 +59,11 @@ def perceptron_entrenamiento(X, y, tasa_aprendizaje, maxGen):
         # Verificar el criterio de finalización
         if error_total == 0:
             break
-
         generacion += 1
-
     return pesos, bias
 
-# Entrenar el perceptrón con los datos de entrenamiento XOR
-archivo_entrenamiento = 'OR_trn.csv'
+# Entrenar
+archivo_entrenamiento = 'XOR_trn.csv'
 datos_entrenamiento = np.genfromtxt(archivo_entrenamiento, delimiter=',')
 X_entrenamiento = datos_entrenamiento[:, :-1]  # Entradas
 y_entrenamiento = datos_entrenamiento[:, -1]   # Salidas
