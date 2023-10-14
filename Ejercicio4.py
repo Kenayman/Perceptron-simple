@@ -90,7 +90,6 @@ output_size = 3
 learning_rate = 0.01
 epochs = 100
 
-# Validación utilizando Leave-k-Out (k = 5)
 k_out = 5
 k_out_accuracy = leave_k_out(X, y, k_out)
 print(f'Error Leave-{k_out}-Out: {1 - k_out_accuracy:.2f}')
@@ -99,7 +98,7 @@ print(f'Error Leave-{k_out}-Out: {1 - k_out_accuracy:.2f}')
 correctly_classified_points = []
 incorrectly_classified_points = []
 
-# Realiza Leave-One-Out manualmente
+# Realiza Leave-One-Out
 for i in range(len(X)):
     X_val = X[i]
     y_val = y[i]
